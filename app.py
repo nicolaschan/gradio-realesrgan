@@ -11,7 +11,7 @@ def upscale_image(input_image):
         scale=4,
         model_path='weights/RealESRGAN_x4plus.pth',
         model=model,
-        tile=0,
+        tile=1024,
         tile_pad=10,
         pre_pad=0,
         half=True
