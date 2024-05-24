@@ -31,9 +31,10 @@ iface = gr.Interface(
     inputs=gr.Image(type="numpy"),
     outputs=gr.Image(type="numpy"),
     title="Real-ESRGAN Image Upscaler",
-    description="Upload an image to upscale using Real-ESRGAN."
+    description="Upload an image to upscale using Real-ESRGAN.",
+    concurrency_limit=1
 )
 
 if __name__ == "__main__":
-    iface.launch(server_name="0.0.0.0", server_port=7860, enable_queue=True)
+    iface.queue().launch(server_name="0.0.0.0", server_port=7860)
 
